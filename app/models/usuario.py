@@ -17,6 +17,7 @@ class Usuario(db.Model, UserMixin):
     auth_origen = db.Column(db.Enum("Local", "Entra"), default="Local", nullable=False)
     fecha_alta = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
     es_viajante = db.Column(db.Boolean, default=False)
+    must_change_password = db.Column(db.Boolean, default=False)
 
     roles = db.relationship(
         "Rol",
